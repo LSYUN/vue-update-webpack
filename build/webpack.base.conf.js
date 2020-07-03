@@ -38,6 +38,7 @@ module.exports = {
       '@': resolve('src'),
     }
   },
+  bail: true, // Fail out on the first error instead of tolerating it
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
@@ -55,6 +56,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
+          esModule: false,
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
