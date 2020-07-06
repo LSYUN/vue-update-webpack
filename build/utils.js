@@ -52,12 +52,12 @@ exports.cssLoaders = function (options) {
       // })
       return [
         MiniCssExtractPlugin.loader,
-        {
-          loader: 'vue-style-loader',
-          options: {
-            minimize: true
-          }
-        }
+        // {
+        //   loader: 'vue-style-loader',
+        //   options: {
+        //     minimize: true
+        //   }
+        // }
       ].concat(loaders)
     } else {
       return ['vue-style-loader'].concat(loaders)
